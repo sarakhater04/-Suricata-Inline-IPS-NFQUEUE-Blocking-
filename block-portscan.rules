@@ -1,0 +1,2 @@
+drop tcp any any -> any any (msg:"Portscan SYN detected"; flags:S; threshold:type both, track by_src, count 10, seconds 3; sid:2000011; rev:1;)
+drop tcp any any -> any any (msg:"Portscan FIN detected"; flags:F; threshold:type both, track by_src, count 10, seconds 3; sid:2000012; rev:1;)
