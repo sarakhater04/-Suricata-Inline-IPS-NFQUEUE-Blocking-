@@ -1,0 +1,1 @@
+drop tcp any any -> any 22 (msg:"SSH Brute-Force attempt"; flow:to_server; flag:S; threshold:type both, track by_src, count 5, seconds 10; sid:20001; rev:1;)
